@@ -1,0 +1,25 @@
+[tools]
+python = "3.6"
+dotnet = "8.0"
+
+[tasks.check]
+run = "git diff --check"
+
+[tasks.syntax]
+run = "python -m compileall -q ."
+
+[tasks."csharp:BlockChain.Console:build"]
+run = "dotnet build BlockChain.Console.csproj"
+dir = "csharp/BlockChain.Console"
+
+[tasks."csharp:BlockChain.Console:test"]
+run = "dotnet test BlockChain.Console.csproj"
+dir = "csharp/BlockChain.Console"
+
+[tasks."csharp:BlockChain:build"]
+run = "dotnet build BlockChain.csproj"
+dir = "csharp/BlockChain"
+
+[tasks."csharp:BlockChain:test"]
+run = "dotnet test BlockChain.csproj"
+dir = "csharp/BlockChain"
